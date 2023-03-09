@@ -1,5 +1,3 @@
-const timer = require("./timer");
-
 const audioConstraints = {
   audio: {
     echoCancellation: true,
@@ -32,6 +30,7 @@ function Recorder() {
     const buffer = Buffer.from(await blob.arrayBuffer());
 
     ipcRenderer.send(IPCEvents.SAVE_VIDEO, buffer);
+    recordedChunks = [];
   }
 
   async function setup() {
@@ -45,7 +44,6 @@ function Recorder() {
     let tracks = [...screenStream.getTracks(), ...audioStream.getAudioTracks()];
     const stream = new MediaStream(tracks);
     mediaRecorder = new MediaRecorder(stream);
-
     mediaRecorder.ondataavailable = handleDataAvailable;
     mediaRecorder.onstop = handleStop;
   }

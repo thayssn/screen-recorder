@@ -1,6 +1,11 @@
 const { ipcRenderer } = require("electron");
-const IPCEvents = require("../../enums/events");
-const recorder = require("./mediaRecorder");
+const IPCEvents = {
+  REQUEST_SOURCES: "REQUEST_SOURCES",
+  SOURCE_SELECTED: "SOURCE_SELECTED",
+  SAVE_VIDEO: "SAVE_VIDEO",
+  USER_CANCELLED: "USER_CANCELLED",
+  COMPRESSED_VIDEO: "COMPRESSED_VIDEO",
+};
 
 const startBtn = document.querySelector("#play");
 const status = document.querySelector("#status");
