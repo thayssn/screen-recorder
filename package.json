@@ -1,6 +1,6 @@
 {
   "name": "screen-recorder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple screen recorder tool",
   "main": "src/index.js",
   "scripts": {
@@ -26,7 +26,8 @@
               "productName": "Screen Recorder",
               "name": "screen-recorder",
               "maintainer": "@thays.sn",
-              "icon": "./src/screen_recorder_icon.png"
+              "icon": "./src/screen_recorder_icon.png",
+              "version": "1.1.0"
             }
           }
         }

@@ -2,6 +2,8 @@
 
 A simple screen recorder tool.
 
+<img src="https://raw.githubusercontent.com/thayssn/screen-recorder/master/capture.png"/>
+
 ## Run locally
 
 `npm install`
