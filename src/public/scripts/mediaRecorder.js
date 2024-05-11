@@ -37,7 +37,6 @@ function Recorder() {
     const screenStream = await navigator.mediaDevices.getUserMedia(
       screenConstraints
     );
-    console.log(screenStream);
     const audioStream = await navigator.mediaDevices.getUserMedia(
       audioConstraints
     );

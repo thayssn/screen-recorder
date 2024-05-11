@@ -7,6 +7,14 @@ body {
 
 #info {
   padding: 16px;
+  position: relative;
+}
+
+#closeApp {
+  font-size: 8px;
+  position: absolute;
+  right: 10px;
+  margin-top: 5px;
 }
 
 #controls {
@@ -58,7 +66,7 @@ button:disabled {
 }
 
 #play {
-  border-right: 2px solid black;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 #selectSourceBtn {

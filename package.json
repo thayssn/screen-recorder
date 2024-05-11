@@ -1,8 +1,7 @@
 {
-  "name": "my-app",
-  "productName": "my-app",
+  "name": "screen-recorder",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Simple screen recorder tool",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -13,8 +12,7 @@
   },
   "keywords": [],
   "author": {
-    "name": "Thays dos Santos",
-    "email": "thays.santos@idwall.co"
+    "name": "Thays dos Santos"
   },
   "license": "MIT",
   "config": {
@@ -22,24 +20,15 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "my_app"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
           "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "config": {
+            "options": {
+              "productName": "Screen Recorder",
+              "name": "screen-recorder",
+              "maintainer": "@thays.sn",
+              "icon": "./src/screen_recorder_icon.png"
+            }
+          }
         }
       ]
     }
