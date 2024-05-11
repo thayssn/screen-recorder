@@ -39,7 +39,7 @@ button {
   -webkit-app-region: none;
 }
 
-button:hover {
+#controls button:hover {
   box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -71,7 +71,7 @@ button:disabled {
   font-size: 2rem;
   font-weight: bold;
   color: white;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 2px black;
   margin-top: 8px;
   font-family: monospace;
 }
@@ -85,7 +85,7 @@ button:disabled {
 }
 
 .user_video_wrapper.hidden {
-  display: none;
+  visibility: hidden;
 }
 
 #user {
@@ -100,19 +100,32 @@ button:disabled {
   font-style: italic;
   color: white;
   font-weight: bold;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 2px black;
   margin-top: 8px;
 }
 
-#toggleVideo {
+#toggleVideo svg {
   width: 24px;
   height: 24px;
+  fill: #fff;
+  filter: drop-shadow(1px 1px 2px black);
 }
 
-#toggleVideo.on {
-  background-image: url("images/webcam.svg");
+#toggleVideo:hover svg {
+  fill: #5eade6 !important;
 }
 
-#toggleVideo.off {
-  background-image: url("images/webcam_off.svg");
+#toggleVideo #toggle-video-icon-off {
+  display: block;
+}
+#toggleVideo.on #toggle-video-icon-off {
+  display: none;
+}
+
+#toggleVideo #toggle-video-icon-on {
+  display: none;
+}
+
+#toggleVideo.on #toggle-video-icon-on {
+  display: block;
 }

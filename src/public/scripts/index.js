@@ -22,6 +22,7 @@ function toggleRecording() {
   } else {
     startBtn.className = "start";
     startBtn.disabled = true;
+    selectSourceBtn.disabled = true;
     status.innerText = "Processando...";
     recorder.stop();
   }
@@ -50,11 +51,13 @@ ipcRenderer.on(IPCEvents.COMPRESSED_VIDEO, (event, error) => {
   }
   status.innerText = "";
   startBtn.disabled = null;
+  selectSourceBtn.disabled = null;
 });
 
 ipcRenderer.on(IPCEvents.USER_CANCELLED, () => {
   status.innerText = "";
   startBtn.disabled = null;
+  selectSourceBtn.disabled = null;
 });
 
 getVideoSources();

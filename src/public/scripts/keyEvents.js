@@ -1,19 +1,21 @@
-let keysPressed = new Set([]);
 let keyTimer = null;
+let canType = true;
+const acceptedKeys = ["KeyR", "KeyT"];
+const operationsMapper = {
+  KeyR: toggleRecording,
+  KeyT: toggleCamera,
+};
 
-window.addEventListener("keydown", ({ code }) => {
-  if (keysPressed.has(code)) return;
+window.addEventListener("keydown", async ({ code, repeat }) => {
+  console.log(canType);
+  if (!canType || !acceptedKeys.includes(code) || repeat) return;
+  canType = false;
   clearTimeout(keyTimer);
-  keysPressed.add(code);
-  const hasCombo = [...keysPressed].every((key) =>
-    ["MetaLeft", "ShiftLeft", "KeyR"].includes(key)
-  );
-  if (hasCombo) {
-    keysPressed = new Set([]);
-    toggleRecording();
-  }
+  const operation = operationsMapper[code];
+
+  await operation();
   keyTimer = setTimeout(() => {
-    keysPressed = new Set([]);
+    canType = true;
     clearTimeout(keyTimer);
   }, 500);
 });
